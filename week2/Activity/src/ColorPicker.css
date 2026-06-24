@@ -1,0 +1,30 @@
+.text{
+    color: red;
+}
+.main{
+    display: flex;
+}
+.btn{
+    display: flex;
+    flex-direction: column;
+}
+.red{
+    background-color: red;
+    border: none;
+}
+.green{
+
+    background-color: green;
+    border: none;
+}
+.blue{
+    background-color: blue;
+    border: none;
+}
+.box{
+    border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+}
