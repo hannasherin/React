@@ -3,6 +3,7 @@ import Counter from "./components/Counter";
 import Alert from "./components/Alert";
 import Show from "./components/Show";
 import Color from "./components/Color";
+import NameUpdate from "./components/NameUpdate";
 
 function App() {
 
@@ -39,6 +40,8 @@ function App() {
      <br />
      <br />
      {/* <Color/> */}
+
+     <NameUpdate/>
     </>
   )
 }
