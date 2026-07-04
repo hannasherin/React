@@ -11,23 +11,25 @@ console.log('Component Mounted');
 },[count , name])
 
 
-useEffect(()=>{
-let count=0
-const intervel= setInterval(() => {
-  count++
-  console.log(count);
+// useEffect(()=>{
+// let count=0
+// const intervel= setInterval(() => {
+//   count++
+//   console.log(count);
   
-}, 2000);
+// }, 2000);
 
-// cleanUp function 
-return ()=>{
-  clearInterval(intervel)
-  console.log("clear");
+// // cleanUp function 
+// return ()=>{
+//   clearInterval(intervel)
+//   console.log("clear");
   
-}
+// }
 
 
-},[])
+// },[])
+
+
 
 
 
