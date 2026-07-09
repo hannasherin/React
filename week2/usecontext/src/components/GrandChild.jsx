@@ -1,12 +1,12 @@
 import React from 'react'
-import GgChild from './GgChild'
-
-const GrandChild = ({value , greet}) => {
+import { useContext } from 'react'
+import { UserContext } from '../Context/UserContext'
+const GrandChild = () => {
+  const{ setUser}=useContext(UserContext)
   return (
     <div>
-      <h1>GrandChild Component</h1>
-      <h1>{value}</h1>
-      <GgChild greet={greet}/>
+      <h1>Grand Child Component</h1>
+      <button onClick={()=>setUser("Hanna")}>Change Name</button>
     </div>
   )
 }

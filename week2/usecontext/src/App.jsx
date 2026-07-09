@@ -1,4 +1,6 @@
 import Parent from "./components/Parent"
+import Child from "./components/Child"
+import GrandChild from "./components/GrandChild"
 
 function App() {
 
@@ -7,6 +9,8 @@ function App() {
     <>
     
       <Parent/>
+      <Child/>
+      <GrandChild/>
     </>
   )
 }

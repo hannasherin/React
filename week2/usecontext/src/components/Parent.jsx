@@ -1,12 +1,17 @@
 import React from 'react'
-import Child from './Child'
+import { useContext } from 'react'
+import { UserContext } from '../Context/UserContext'
+
 const Parent = () => {
-  let name="Hanna Sherin"
-  let greet="Hello, I'm From Parent component "
+//  console.log(useContext(UserContext));
+  const { user , setUser} = useContext(UserContext)
+  
   return (
     <div>
-        <h1>Parent Component</h1>
-      <Child username={name} greet={greet}/>
+       <h1>Parent Component </h1>
+       <h2>{user}</h2>
+       <button onClick={()=> setUser("Zara")}>Change Name</button>
+       <hr />
     </div>
   )
 }
