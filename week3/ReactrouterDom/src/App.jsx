@@ -4,6 +4,7 @@ import Home from "./Pages/Home"
 import About from "./Pages/About"
 import Contact from "./Pages/Contact"
 import ApiProduct from "./Pages/ApiProduct"
+import ProductDetails from "./Pages/ProductDetails"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Route path="/about" element={<About/>}/>
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/apiproduct" element={<ApiProduct/>}/>
+      <Route path="/apiproduct/:id" element={<ProductDetails/>}/>
      </Routes>
     </>
   )

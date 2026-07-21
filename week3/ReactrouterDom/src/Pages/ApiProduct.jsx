@@ -1,8 +1,11 @@
 import React, { useState , useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ApiProduct = () => {
 
     const[data,setData]=useState([])
+    const[isloading,setIsLoading]=useState(false)
+    const navigate=useNavigate()
 
     //  promise 
     // useEffect(()=>{
@@ -15,9 +18,11 @@ const ApiProduct = () => {
     // async await 
     useEffect(()=>{
     const fetchData=async()=>{
+      setIsLoading(true)
       const res=await fetch('https://dummyjson.com/products')
       const prodata=await res.json()
       setData(prodata.products)
+      setIsLoading(false)
     }
     fetchData()
   },[])
@@ -30,6 +35,7 @@ const ApiProduct = () => {
   return (
     <div>
       <h1>API product List</h1>
+      {isloading && <h1>Loading....</h1>}
   <div>
       {/* <ul>
     {data.map((products)=>(
@@ -47,7 +53,7 @@ const ApiProduct = () => {
         <p>Product ID : {item.id}</p>
         <p>Item : {item.title}</p>
         <p>Description : {item.description}</p>
-        <button>View Details</button>
+        <button onClick={()=>navigate(`/apiproduct/${item.id}`)}>View Details</button>
 
         <hr />
     </div>
