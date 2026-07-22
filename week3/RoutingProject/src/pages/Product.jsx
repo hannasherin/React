@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import "./Product.css"
+import { useNavigate } from 'react-router-dom'
 
 const Product = () => {
     const [data, setData] = useState([])
+    const navigate=useNavigate()
 
     useEffect(() => {
         fetch("https://dummyjson.com/products")
@@ -24,7 +26,7 @@ const Product = () => {
                         <img src={item.images} alt="" width={200} />
                         <p>id : {item.id}</p>
                         <p>title : {item.title}</p>
-                        <button >View details</button>
+                        <button onClick={()=>navigate(`/product/${item.id}`)}>View details</button>
                     </div>
                 ))}
             </div>
