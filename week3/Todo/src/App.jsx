@@ -32,6 +32,7 @@ function App() {
 
   return (
     <>
+    <div className="main">
       <h1>Todo Project</h1> <hr />
 
       <input type="text"
@@ -49,7 +50,7 @@ function App() {
           </li>
         ))}
       </ul>
-
+</div>
 
     </>
   )
