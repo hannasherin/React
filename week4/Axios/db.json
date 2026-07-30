@@ -1,0 +1,34 @@
+{
+    "students":[
+        {
+            "id":1,
+            "name":"HAnna",
+            "course":"MERN",
+            "email":"Hanna@gmail.com"
+        },
+        {
+            "id":2,
+            "name":"Nived",
+            "course":"Python",
+            "email":"Nived@gmail.com"
+        },
+        {
+            "id":3,
+            "name":"Nisha",
+            "course":"Node",
+            "email":"nisha@gmail.com"
+        },
+        {
+            "id":4,
+            "name":"Shahma",
+            "course":"Express",
+            "email":"shahma@gmail.com"
+        },
+        {
+            "id":5,
+            "name":"lamiya",
+            "course":"Reacr",
+            "email":"lamiya@gmail.com"
+        }
+    ]
+}

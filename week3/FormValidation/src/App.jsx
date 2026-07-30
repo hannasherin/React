@@ -48,7 +48,9 @@ if(formdata.password.trim()===""){
  }
  else if(!/[a-z]/.test(formdata.password)){
   newError.password="must contain one lowercase letter"
- }
+ } else if(!/[!@#%^*()]/.test(formdata.passsword)){
+    newError.password="Must contain one special character"
+  }
 
 //  update the error state 
 setErrors(newError)
