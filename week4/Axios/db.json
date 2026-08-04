@@ -1,34 +1,40 @@
 {
-    "students":[
-        {
-            "id":1,
-            "name":"HAnna",
-            "course":"MERN",
-            "email":"Hanna@gmail.com"
-        },
-        {
-            "id":2,
-            "name":"Nived",
-            "course":"Python",
-            "email":"Nived@gmail.com"
-        },
-        {
-            "id":3,
-            "name":"Nisha",
-            "course":"Node",
-            "email":"nisha@gmail.com"
-        },
-        {
-            "id":4,
-            "name":"Shahma",
-            "course":"Express",
-            "email":"shahma@gmail.com"
-        },
-        {
-            "id":5,
-            "name":"lamiya",
-            "course":"Reacr",
-            "email":"lamiya@gmail.com"
-        }
-    ]
+  "students": [
+    {
+      "name": "Hanna Basheer",
+      "email": "hannasherinpp2000@gmail.com",
+      "course": "React",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Nived",
+      "course": "Python",
+      "email": "Nived@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Nisha",
+      "course": "Node",
+      "email": "nisha@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "Shahma",
+      "course": "Express",
+      "email": "shahma@gmail.com"
+    },
+    {
+      "name": "RAhana",
+      "email": "Rahana@gmail.com",
+      "course": "python",
+      "id": 5
+    },
+    {
+      "name": "Hanna Basheer",
+      "email": "hannasherinpp2000@gmail.com",
+      "course": "mern",
+      "id": 6
+    }
+  ]
 }
