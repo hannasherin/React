@@ -14,6 +14,5 @@ export const userSlice=createSlice({  //it contain object
     
    }
 })
- export default {setUsers}=userSlice.actions;
+ export const {setUsers}=userSlice.actions;
  export default userSlice.reducer;
- 

@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setUsers } from '../slice/userSlice'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
 
@@ -8,16 +11,33 @@ const Home = () => {
         email: ''
     })
 
+    const dispatch=useDispatch()
+    const navigate=useNavigate()
     const handleChange = (e) => {
         const { name, value } = e.target;
         setInputData({ ...inputData, [name]: value })
     }
+    // console.log(inputData);
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+        dispatch(setUsers(inputData))
+        setInputData({
+            name:'',
+            age:'',
+            email:''
+        })
+        alert('User Created Sucessfully')
+        setTimeout(()=>{
+            navigate('/users')
+        },1000)
+    }
+    
 
 
     return (
         <div>
             <h1>Create User</h1> <hr />
-            <form action="">
+            <form onSubmit={handleSubmit}>
 
                 <input type="text"
                     placeholder='Enter Name'
