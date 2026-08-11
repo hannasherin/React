@@ -1,0 +1,10 @@
+ul{
+    display: flex;
+    gap: 70px;
+    padding: 25px;
+    background-color: rgb(92, 3, 3);
+    color: white;
+}
+li{
+    list-style: none;
+}
