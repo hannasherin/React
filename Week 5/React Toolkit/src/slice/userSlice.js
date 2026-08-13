@@ -11,8 +11,10 @@ export const userSlice=createSlice({  //it contain object
      setUsers:(state,action)=>{
      state.users=[...state.users,action.payload]
         },
-    
+      deleteUser:(state,action)=>{
+          state.users=state.users.filter((item,index)=>index !== action.payload)
+      }
    }
 })
- export const {setUsers}=userSlice.actions;
+ export const {setUsers , deleteUser}=userSlice.actions;
  export default userSlice.reducer;

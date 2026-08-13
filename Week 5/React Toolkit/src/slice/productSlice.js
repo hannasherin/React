@@ -12,6 +12,7 @@ export const productSlice=createSlice({
             state.products=[...state.products,action.payload]
 
         },
+        
     }
 })
 export const {setProducts}=productSlice.actions;
