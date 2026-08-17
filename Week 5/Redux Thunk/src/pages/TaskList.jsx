@@ -16,6 +16,17 @@ const TaskList = () => {
   return (
     <div>
       <h1>Task List</h1>
+      
+      {tasks.map((item)=>(
+        <div key={item.id}>
+             <p>{item.id}</p>
+             <p>{item.title}</p>
+             <p>{item.description}</p>
+       <hr />
+        </div>
+
+      ))}
+
     </div>
   )
 }

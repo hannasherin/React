@@ -36,7 +36,7 @@ const taskSlice=createSlice({
         .addCase(getTaskFromServer.fulfilled,(state,action)=>{
             state.isloading=false;
             state.error='';
-            state.task=action.payload
+            state.tasks=action.payload
         
         })
         // error 
