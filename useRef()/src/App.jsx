@@ -1,17 +1,23 @@
-import React, { useRef } from 'react'
+import SeperateRef from './components/SeperateRef'
+import Useref from './components/Useref'
+import SingleForm from './components/SingleForm'
+import ConstructorRef from './components/ConstructorRef'
+
 
 const App = () => {
 
-const inputRef=useRef(null)
-const showpswd=()=>{
-  inputRef.current.type='text'
-}
 
   return (
     <div>
-      
-  <input type="password" name='password' ref={inputRef} />
-  <button onClick={showpswd}>Show Password</button>
+     <Useref/>
+     <br />
+     <SeperateRef/>
+     <hr /> <br />
+     <SingleForm/>
+     <hr /> <br />
+     <ConstructorRef/>
+
+   
 
     </div>
   )
