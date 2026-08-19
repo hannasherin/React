@@ -3,7 +3,9 @@ import React, { useRef } from 'react'
 const Useref = () => {
     const inputRef=useRef(null)
     const showPassword=()=>{
+      
         inputRef.current.type='text'
+        
     }
   return (
     

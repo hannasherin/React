@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getTaskFromServer ,deleteTask } from '../slice/taskSlice';
+import { useNavigate } from 'react-router-dom';
 
 const TaskList = () => {
   const { tasks, isloading, error } = useSelector((state) => state.taskInfo)
   console.log(tasks);
 
   const dispatch = useDispatch()
+  const navigate=useNavigate()
 
   useEffect(() => {
 
@@ -43,6 +45,7 @@ const TaskList = () => {
 
       <button 
         className="px-3 py-1 border border-blue-500 text-blue-500 rounded hover:bg-blue-500 hover:text-white transition"
+       onClick={()=>navigate(`/edit-task/${item.id}`)}
       >
         Edit
       </button>

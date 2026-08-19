@@ -36,17 +36,32 @@ export const deleteTask = createAsyncThunk(
 
 //post
 
-export const addTaskToServer=createAsyncThunk(
-  "  task/addTaskToServer",
-  async(formData,{rejectWithValue})=>{
-  try {
-    const response=await api.post('/tasks',formData)
-    return response.data
-  } catch (error) {
-    return rejectWithValue({error :'no task created'})
-  }
-  }
+export const addTaskToServer = createAsyncThunk(
+    "  task/addTaskToServer",
+    async (formData, { rejectWithValue }) => {
+        try {
+            const response = await api.post('/tasks', formData)
+            return response.data
+        } catch (error) {
+            return rejectWithValue({ error: 'no task created' })
+        }
+    }
 )
+
+// put 
+export const updataTask = createAsyncThunk(
+    "  task/updataTask",
+    async (task, { rejectWithValue }) => {
+        try {
+            const response = await api.put(`/tasks/${task.id}`, task)
+            return response.data
+        } catch (error) {
+            return rejectWithValue({ error: 'no task created' })
+        }
+    }
+)
+
+
 
 const taskSlice = createSlice({
     name: 'tasks',
@@ -81,7 +96,7 @@ const taskSlice = createSlice({
 
             .addCase(deleteTask.fulfilled, (state, action) => {
                 state.isloading = false
-                
+
                 state.tasks = state.tasks.filter((task) => task.id !== action.payload)
             })
 
@@ -90,22 +105,42 @@ const taskSlice = createSlice({
                 state.error = action.payload
 
             })
-    //    ========create Task=====
+            //    ========create Task=====
 
-    .addCase(addTaskToServer.pending,(state,action)=>{
-        state.isloading=true
+            .addCase(addTaskToServer.pending, (state, action) => {
+                state.isloading = true
 
-    })
+            })
 
-.addCase(addTaskToServer.fulfilled,(state,action)=>{
-        state.isloading=false
-        state.tasks.push(action.payload)
-    })
+            .addCase(addTaskToServer.fulfilled, (state, action) => {
+                state.isloading = false
+                state.tasks.push(action.payload)
+            })
 
-    .addCase(addTaskToServer.rejected,(state,action)=>{
-        state.isloading=false
-       state.error=action.payload.error
-    })
+            .addCase(addTaskToServer.rejected, (state, action) => {
+                state.isloading = false
+                state.error = action.payload.error
+            })
+
+            // =============update task=======
+
+            .addCase(updataTask.pending, (state, action) => {
+                state.isloading = true
+                state.error = ''
+
+            })
+
+            .addCase(updataTask.fulfilled, (state, action) => {
+                state.isloading = false
+                state.tasks = state.tasks.map((item) =>
+                    item.id === action.payload.id ? action.payload : item)
+            })
+
+            .addCase(updataTask.rejected, (state, action) => {
+                state.isloading = false
+                state.error=action.payload?.error || 'No  Task Update'
+
+            })
 
     }
 })
