@@ -1,14 +1,32 @@
 
 
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const EditTask = () => {
 
-const {tasks.isloading,erroro  }
+
+const {id}=useParams
+const dispatch=useDispatch()
+const navigate=useNavigate()
+const {tasks,isloading,error}=useSelector((state)=>state.taskInfo)
+const [formData,setFormData]=useState({
+  title:'',
+  descripition:'',
+})
 
   // find selected task 
 useEffect(()=>{
-   const task=tasks.find()
+   const task=tasks.find((item)=>String(item.id)===String(id))
+
+   if(task){
+    setFormData({
+      title:task.title,
+      descripition:task.descripition
+    })
+   }
+
 })
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-300">
